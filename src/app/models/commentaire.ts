@@ -4,3 +4,4 @@ export class Commentaire {
     auteur: string;
     date: Date;
 }
+
