@@ -1,13 +1,12 @@
 <h1>Bienvenue au marché : {{nomSupermarket}}</h1>
 <div class="container">
-    <div class="row" *ngFor="let t of lesCategories">
-        <div class="col-md-6">
+    <div class="row">
+        <div class="col-md-6" *ngFor="let t of lesCategories">
 
     <div>
     <img src="{{t.image}}" alt="{{t.nom}}" class="rounded-circle"/><br>
     <span class="badge badge-secondary badge-pill">{{t.nom|uppercase}}</span>
     </div>
-
 </div>
     </div>
 </div>

@@ -1,0 +1,13 @@
+<h1>Partie 2</h1>
+<ul><div class="container">
+    <div class="row">
+        <div class="col-md-4">
+    <ng-container *ngFor="let pers of materiels">
+    <div *ngIf="pers.quantite>0">
+        <wad-materiel [materiel]="pers"></wad-materiel>
+    </div>
+    </ng-container>
+</div>
+    </div>
+    </div>
+</ul>
