@@ -6,7 +6,7 @@ import { Materiel } from '../../../models/materiel';
   styleUrls: ['./materiel.component.css']
 })
 export class MaterielComponent implements OnInit {
-  @Input("materiel") p:Materiel;
+  @Input('materiel') p:Materiel;
   constructor() { }
 
   ngOnInit(): void {

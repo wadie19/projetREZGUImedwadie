@@ -1,7 +1,7 @@
-<h2>détail de {{materiel.libelle}} d'id:{{materiel.id}}</h2>
 <div class="container">
     <div class="row">
         <div class="col-6">
+            <h2>Détail de {{materiel.libelle}} d'id:{{materiel.id}}</h2>
         <ul class="list-group">
             <li class="list-group-item"><img src="{{materiel.photo}}" alt="PC HP"></li>
             <li class="list-group-item">Marque: {{materiel.marque}}</li>
@@ -9,9 +9,21 @@
             <li class="list-group-item">Description: {{materiel.description}}</li>
             <li class="list-group-item">Quantité: {{materiel.quantite}}</li>
             <li class="list-group-item"><input type="checkbox" [checked]="materiel.hautGamme"/>Haut de Gamme</li> 
-        <li class="list-group-item"><button type="button" class="btn btn-primary">Afficher les commentaires</button></li>
+        <li class="list-group-item">
+            <button type="button" class="btn btn-primary" (click)="onAffiche()">Afficher les commentaires</button>
+        </li>
         </ul>
         </div>  
+        <div class="col-6" *ngIf='afficher'>
+            <h1>Les commentaires</h1>
+            <div *ngFor="let com of materiel.commentaires; index as i">
+                
+                    <wad-comment [materiel]="com" [indice]="i"></wad-comment>
+               
+            </div>
+           
+        
+        </div>
     </div>
 </div>
 
