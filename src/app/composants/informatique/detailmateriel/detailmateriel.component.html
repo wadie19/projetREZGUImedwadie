@@ -9,7 +9,6 @@
             <li class="list-group-item">Prix: {{mat.prix}}</li>  
             <li class="list-group-item">Description: {{mat.description}}</li>
             <li class="list-group-item">Quantité: {{mat.quantite}}</li>
-            <li class="list-group-item">comem: {{mat.commentaires[1].contenu}}</li>
             <li class="list-group-item"><input type="checkbox" [checked]="mat.hautGamme"/>Haut de Gamme</li> 
         <li class="list-group-item">
             <button type="button" class="btn btn-primary" (click)="onAffiche()">Afficher les commentaires</button>
@@ -22,8 +21,6 @@
                 <ul *ngFor="let t of com.commentaires; index as i">
                    <wad-comment [materiel]="t" [indice]="i"></wad-comment>
                 </ul>
-                    
-               
             </div>
            
         
