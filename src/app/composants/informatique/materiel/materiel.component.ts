@@ -8,7 +8,6 @@ import { Materiel } from '../../../models/materiel';
 export class MaterielComponent implements OnInit {
   @Input('materiel') p:Materiel;
   constructor() { }
-
   ngOnInit(): void {
   }
 

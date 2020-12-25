@@ -1,27 +1,28 @@
 <div class="container">
     <div class="row">
-        <div class="col-6" *ngFor='let mat of materiel'>
-            <h2>Détail de {{mat.libelle}} d'id:{{mat.id}}</h2>
+        <div class="col-6">
+            <h2>Détail de {{materiel.libelle}} d'id:{{materiel.id}}</h2>
             
-        <ul class="list-group">
-            <li class="list-group-item"><img src="{{mat.photo}}" alt="PC HP"></li>
-            <li class="list-group-item">Marque: {{mat.marque}}</li>
-            <li class="list-group-item">Prix: {{mat.prix}}</li>  
-            <li class="list-group-item">Description: {{mat.description}}</li>
-            <li class="list-group-item">Quantité: {{mat.quantite}}</li>
-            <li class="list-group-item"><input type="checkbox" [checked]="mat.hautGamme"/>Haut de Gamme</li> 
+        <ul class="list-group"> 
+            <li class="list-group-item"><img src="{{materiel.photo}}" alt="PC HP"></li>
+            <li class="list-group-item">Marque: {{materiel.marque}}</li>
+            <li class="list-group-item">Prix: {{materiel.prix}}</li>  
+            <li class="list-group-item">Description: {{materiel.description}}</li>
+            <li class="list-group-item">Quantité: {{materiel.quantite}}</li>
+            <li class="list-group-item"><input type="checkbox" [checked]="materiel.hautGamme"/>Haut de Gamme</li> 
         <li class="list-group-item">
             <button type="button" class="btn btn-primary" (click)="onAffiche()">Afficher les commentaires</button>
+            <button type="button" class="btn btn-info" (click)="onListmateriel()">Retour</button>
         </li>
         </ul>
         </div>  
         <div class="col-6" *ngIf='afficher'>
             <h1>Les commentaires</h1>
-            <div *ngFor="let com of materiel">
-                <ul *ngFor="let t of com.commentaires; index as i">
-                   <wad-comment [materiel]="t" [indice]="i"></wad-comment>
-                </ul>
-            </div>
+            <div *ngFor="let com of materiel.commentaires; index as i">
+                
+                <wad-comment [materiel]="com" [indice]="i"></wad-comment>
+           
+        </div>
            
         
         </div>
